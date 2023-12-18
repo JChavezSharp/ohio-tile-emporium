@@ -1,0 +1,163 @@
+:root {
+    /* CSS HSL */
+    --soft-white: hsl(0, 0%, 96%);
+    --soft-gray: hsl(0, 0%, 84%);
+    --tiffany-blue-light: hsla(167, 63%, 86%, 1);
+    --tiffany-blue: hsla(167, 43%, 76%, 1);
+    --tiffany-blue-dark: hsla(167, 23%, 26%, 1);
+    --tiffany-blue-darker: rgb(61, 83, 77);
+
+    --font-tiles: 'Marck Script', cursive;
+    --font-main: Georgia, 'Times New Roman', Times, serif;
+    --big-text: 2rem;
+    --medium-text: 1.15rem;
+    --default-letter-spacing: 0.8px;
+    --content-line-height: 1.5;
+
+    --content-width: 70rem;
+    --large-spacing: min(4rem, 10%) ;
+    --spacing: min(2rem, 5%) ;
+    margin: 0 auto;
+
+    --tile-background: linear-gradient(
+        25deg,
+        hsl(240deg 35% 85%) 0%,
+        hsl(227deg 41% 86%) 8%,
+        hsl(219deg 45% 87%) 18%,
+        hsl(212deg 47% 88%) 28%,
+        hsl(207deg 47% 89%) 38%,
+        hsl(202deg 45% 90%) 49%,
+        hsl(197deg 41% 92%) 61%,
+        hsl(192deg 36% 93%) 73%,
+        hsl(187deg 29% 95%) 86%,
+        hsl(180deg 17% 98%) 100%
+      );
+}
+
+html{width: 100%;height: 100%;}
+
+body {
+    height: 100%;
+    background-image: url("/images/tiles-greenery-unsplash.jpg");
+    background-size: cover;
+    font-family: var(--font-main);
+    letter-spacing: var(--default-letter-spacing);
+    color: var(--tiffany-blue-dark);
+
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--soft-white);
+    font-size: var(--big-text);
+    letter-spacing: 10px;
+    box-shadow: 0 5px 5px var(--soft-gray);
+    padding: var(--spacing);
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+/* main page content */
+
+main {
+    flex: 1 0 auto;
+    background-color: var(--misty-rose);
+}
+
+.content-box {
+    margin: var(--large-spacing) auto;
+    padding: var(--spacing) var(--large-spacing);
+    max-width: var(--content-width);
+    background-color: var(--soft-white);
+    border: 5px solid var(--tiffany-blue-dark);
+    font-size: var(--medium-text);
+}
+
+/* main content: form elements */
+
+form{
+     font-size: var(--big-text);
+}
+
+form input[type="text"] {
+    flex: 1 0 auto;
+}
+form button[type="submit"] {
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: var(--tiffany-blue-light);
+    color: var(--tiffany-blue-dark);
+    box-shadow: inset 1px -3px 0.5rem var(--tiffany-blue);
+    border: 5px solid var(--tiffany-blue-darker);
+    /* border: none; */
+    padding: 1rem;
+}
+form button[type="submit"]:hover {
+    background-color: var(--tiffany-blue);
+    box-shadow: inset 1px -3px 0.5rem var(--soft-gray);
+    cursor: pointer;
+}
+
+/* footer properties */
+
+footer {
+    flex-shrink: 0;
+    background-color: var(--tiffany-blue-light);
+    padding: var(--spacing) calc(var(--spacing)*4);
+    margin-bottom: 0;
+}
+
+footer a {
+    color: var(--tiffany-blue-darker);
+}
+
+footer a:hover {
+    color: var(--soft-white);
+    text-shadow: 0 0 10px var(--tiffany-blue-dark);
+}
+
+/* utilities */
+
+.flex {
+    display: flex;
+    gap: 0.5em;
+}
+.tile {
+    display: grid;
+    place-items: center;
+    width: 100px;
+    height: 100px;
+    border: 6px inset;
+
+
+    font-size: 2.5rem;
+    /* font-family: var(--font-tiles); */
+    background-image: var(--tile-background);
+}
+
+.tile-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .mobile-vertical {
+        flex-direction: column;
+    }
+    .tile {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Tile Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Ohio Tile Emporium</h1>
+    </header>
+    <main>
+        <div class="content-box">
+            <h2>Tile preview generator</h2>
+            <p>Type into the text box the message you would like to create. Once you press the SUBMIT button you can view a preview of your tile order.</p>
+        </div>
+
+        <div class="content-box">
+            <form action="" name="tiles-preview" id="tiles-preview-form" class="flex mobile-vertical">
+                <input type="text" 
+                name="textbox" id="textbox" 
+                title="only enter letters and numbers" required 
+                placeholder="type message"
+                pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$">
+                <button type="submit">Preview Tiles</button>
+            </form>
+        </div>
+
+        <div class="content-box">
+            <h2>Your order preview</h2>
+            <div class="flex tile-container" id="tile-container">
+            </div>
+            <!-- <p class="hidden">Your total is: $<span id="total"></span></p> -->
+        </div>
+    </main>
+    <footer>
+        Photo by <a href="https://unsplash.com/@socialcut?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">S O C I A L . C U T</a> on <a href="https://unsplash.com/photos/green-leafed-plant-beside-tiles-ckUgG-RAgUk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
